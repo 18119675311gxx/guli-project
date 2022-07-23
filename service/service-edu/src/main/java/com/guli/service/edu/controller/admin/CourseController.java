@@ -75,7 +75,6 @@ public class CourseController {
     public R listPage(@ApiParam(value = "当前页码", required = true) @PathVariable Long page,
                       @ApiParam(value = "每页记录数", required = true) @PathVariable Long limit,
                       @ApiParam("课程列表查询对象") CourseQueryVo courseQueryVo){
-
         IPage<CourseVo> pageModel = courseService.selectPage(page, limit, courseQueryVo);
         List<CourseVo> records = pageModel.getRecords();
         long total = pageModel.getTotal();
